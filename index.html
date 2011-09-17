@@ -13,6 +13,7 @@
       feed.load(function(result) {
         if (!result.error) {
           var container = document.getElementById("feed");
+          console.log(result);
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
             var div = document.createElement("div");
