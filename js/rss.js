@@ -33,6 +33,14 @@ var RssItemView = Backbone.View.extend({
 //View
 var RssView = Backbone.View.extend({
     el: $("body"),
+    feedControl = new google.feeds.FeedControl();
+
+  // Add two feeds.
+  feedControl.addFeed("http://www.digg.com/rss/index.xml", "Digg");
+  feedControl.addFeed("http://feeds.feedburner.com/Techcrunch", "TechCrunch");
+
+  // Draw it.
+  feedControl.draw(document.getElementById("content"));
     initialize: function() {
         this.render();
         this.collection.bind("add",this.addItem,this);
@@ -51,12 +59,8 @@ var RssView = Backbone.View.extend({
     load: function(e){
         var url = $(e.target).attr("rss-url");
         if(url){
-            var feed = new google.feeds.Feed(url);
-            feed.load(function(result) {
-                if (!result.error) {
-                    console.log(result);
-                }
-            });
+            this.feedControl.addFeed(url);
+            this.feedControl.draw($("#article_rss"));
         }
     }
 });
