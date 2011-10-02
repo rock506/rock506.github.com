@@ -33,14 +33,7 @@ var RssItemView = Backbone.View.extend({
 //View
 var RssView = Backbone.View.extend({
     el: $("body"),
-    feedControl = new google.feeds.FeedControl();
-
-  // Add two feeds.
-  feedControl.addFeed("http://www.digg.com/rss/index.xml", "Digg");
-  feedControl.addFeed("http://feeds.feedburner.com/Techcrunch", "TechCrunch");
-
-  // Draw it.
-  feedControl.draw(document.getElementById("content"));
+    feedControl: new google.feeds.FeedControl(),
     initialize: function() {
         this.render();
         this.collection.bind("add",this.addItem,this);
