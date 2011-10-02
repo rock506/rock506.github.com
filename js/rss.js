@@ -65,7 +65,3 @@ var RssView = Backbone.View.extend({
 var model = new RssModel();
 var collection = new RssCollection();
 var view = new RssView({model:model,collection:collection});
-collection.add([
-    {name:'JKisJK',url:'http://www.cnblogs.com/jkisjk/rss.aspx'},
-    {name:'rock506',url:'http://www.cnblogs.com/rock506/rss.aspx'}
-]);

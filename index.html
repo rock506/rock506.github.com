@@ -130,21 +130,13 @@ var App = {
 <script type="text/javascript" src="js/logo.js"></script>
 <script type="text/javascript" src="js/rss.js"></script>
 <script language="Javascript" type="text/javascript">
-    //<![CDATA[
-
-    
-function a(){
-console.log("call");
-window.google.load("feeds", "1");
-window.google.setOnLoadCallback(function(){
-      var feedControl = new google.feeds.FeedControl();
-  feedControl.addFeed("http://www.cnblogs.com/rock506/rss.aspx", "rock506");
-  feedControl.addFeed("http://www.cnblogs.com/jkisjk/rss.aspx", "jk");
-  feedControl.draw(document.getElementById("article_rss"));
-  console.log(feedControl);
+google.load("feeds", "1");
+google.setOnLoadCallback(function(){
+    collection.add([
+        {name:'JKisJK',url:'http://www.cnblogs.com/jkisjk/rss.aspx'},
+        {name:'rock506',url:'http://www.cnblogs.com/rock506/rss.aspx'}
+    ]);
 });
-}
-    //]]>
     </script>
   </body>
 </html>
