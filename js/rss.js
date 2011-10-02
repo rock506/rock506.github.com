@@ -53,7 +53,7 @@ var RssView = Backbone.View.extend({
         if(url){
             var feedControl= new google.feeds.FeedControl();
             feedControl.addFeed(url,"506");
-            feedControl.draw($("#article_rss"));
+            feedControl.draw($("#article_rss")[0]);
             console.log($("#article_rss"));
         }
     }
