@@ -36,7 +36,7 @@ var RssArticleView = Backbone.View.extend({
     className: "rss-content",
     template: _.template($('#rss-content-template').html()),
     events: {
-      "click .modal-footer .btn" : "showOrHide",
+      "click .btn" : "showOrHide",
     },
     showOrHide: function(){
         var preview = $(".content-preview");
