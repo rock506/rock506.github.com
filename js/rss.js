@@ -41,7 +41,7 @@ var RssView = Backbone.View.extend({
       "click" : "load",
     },
     render: function(model) {
-        $("body").append(item.template());
+        $("body").append(this.template());
     },
     addItem: function(model) {
         var item = new RssItemView({model:model});
