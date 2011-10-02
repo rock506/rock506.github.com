@@ -96,15 +96,16 @@
     <div class="container">
 
       <div class="content">
-        <div class="page-header">
+        <div class="page-header" id="rss-name">
           <h1>Page name <small>Supporting text or tagline</small></h1>
         </div>
         <div class="row">
-          <div class="span10">
+          <div class="span10" id="feed">
             <h2>Main content</h2>
           </div>
           <div class="span4">
-            <h3>Secondary content</h3>
+            <h3>RSS LIST</h3>
+            <ul id="rssList"></ul>
           </div>
         </div>
       </div>
@@ -114,6 +115,22 @@
       </footer>
 
     </div> <!-- /container -->
-
+<script src="js/qwrap-youa.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAftWTL2xH16u0mao2qUK-_BRsk3qQPXj2vFecBxKMTXFrpq-LdRT015T4Y7ei-EpVg-5x3GSxSUe_ng"></script>
+<script src="js/rss.js"></script>
+<script>
+//;(function(){
+    var rssList = [
+        {name:'JKisJK',url:'http://www.cnblogs.com/jkisjk/rss.aspx'},
+        {name:'rock506',url:'http://www.cnblogs.com/rock506/rss.aspx'}
+    ];
+    var listTpl = rssList.map(function(el){
+        return '<li><a href="###" onclick="rss.load(\''+el.url+'\')">'+el.name+'</li>';
+    });
+    W('#rssList').html(listTpl.join(''));
+    var rss = new Rss({titleContainer:g('rss-name'),contentContainer:g('feed')});
+    //rss.load('http://www.cnblogs.com/rock506/rss.aspx');
+//})();
+</script>
   </body>
 </html>
