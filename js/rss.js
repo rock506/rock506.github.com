@@ -60,11 +60,11 @@ var RssView = Backbone.View.extend({
       "click" : "load",
       "click .btn" : "showOrHide",
       "click .title" : "showOrHide",
-      "click #inp_rss":"addRssItem"
+      "click #btn_rss":"addRssItem"
     },
     addRssItem: function(){
         var inpValue = $("#inp_rss").val().split("|");
-        this.collection.add({name:inpValue[1]|"未命名",url:inpValue[0]});
+        this.collection.add({name:inpValue[1]||"未命名",url:inpValue[0]});
     },
     showOrHide: function(e){
         var parent = $(e.target).closest(".modal");

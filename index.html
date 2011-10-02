@@ -85,7 +85,7 @@ html,body{ width:100%; height:100%; margin:0; padding:0; background-color: #EEEE
         </div>
         <div class="span4">
             <input type="text" id="inp_rss" style="width:150px"/>
-            <input type="button" id="inp_rss" value="add" class="btn"/>
+            <input type="button" id="btn_rss" value="add" class="btn"/>
             <ul id="list_rss"></ul>
         </div>
     </div>
@@ -106,7 +106,10 @@ google.load("feeds", "1");
 google.setOnLoadCallback(function(){
     collection.add([
         {name:'JKisJK',url:'http://www.cnblogs.com/jkisjk/rss.aspx'},
-        {name:'rock506',url:'http://www.cnblogs.com/rock506/rss.aspx'}
+        {name:'UED',url:'http://ued.taobao.com/blog/feed/'},
+        {name:'CDC',url:'http://cdc.tencent.com/?feed=rss2'},
+        {name:'rock506',url:'http://www.cnblogs.com/rock506/rss.aspx'},
+        {name:'ququ',url:'http://www.imququ.com/rss.html'}
     ]);
 });
 </script>
