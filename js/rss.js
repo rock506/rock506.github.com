@@ -36,8 +36,7 @@ var RssArticleView = Backbone.View.extend({
     className: "rss-content",
     template: _.template($('#rss-content-template').html()),
     render: function() {
-        $(this.el).html(this.template(this.model));
-        return this.el;
+        return this.template(this.model);
     }
 });
 //View
