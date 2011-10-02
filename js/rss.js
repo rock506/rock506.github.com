@@ -86,7 +86,7 @@ var RssView = Backbone.View.extend({
                         var article = new RssArticleView({model:{'img':img?img[0]:"",'title':title,'contentSnippet':contentSnippet,'content':content}});
                         return article.render();
                     });
-                    $("#rss-name").html("<h1>"+result.feed.author+" <small>"+result.feed.description+"</small></h1>");
+                    $("#rss-name").html("<h1>"+result.feed.title+" <small>"+result.feed.description+"</small></h1>");
                     $("#article_rss").append(tpl.join(""));
                 }
             });
