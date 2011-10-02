@@ -46,13 +46,13 @@ var RssView = Backbone.View.extend({
     },
     load: function(e){
         var url = $(e.target).attr("rss-url");
-        if(url){console.log(e.target);
+        if(url){
             google.setOnLoadCallback(function(){
             var feed = new google.feeds.Feed(url);
-            console.log(feed);
+            alert(feed);
             feed.load(function(result) {
                 if (!result.error) {
-                    console.log(result);
+                    alert(result);
                 }
             });
             });
