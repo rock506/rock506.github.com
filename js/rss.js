@@ -36,18 +36,10 @@ var RssArticleView = Backbone.View.extend({
     className: "rss-content",
     template: _.template($('#rss-content-template').html()),
     events: {
-      "click .btn" : "showOrHide",
+      "click" : "showOrHide",
     },
     showOrHide: function(){
-        var preview = $(".content-preview");
-        var complete = $(".content-complete");
-        if(preview.css("display")=="none"){
-            preview.css("display","block");
-            complete.css("display","none");
-        }else{
-            preview.css("display","none");
-            complete.css("display","block");
-        }
+        alert("a");
     },
     render: function() {
         return this.template(this.model);
@@ -65,9 +57,9 @@ var RssView = Backbone.View.extend({
       "click" : "load",
       "click .btn" : "showOrHide",
     },
-          showOrHide: function(e){
+    showOrHide: function(e){
       console.log(e);
-      },
+    },
     render: function(model) {
         $("body").append(this.template());
     },
