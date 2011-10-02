@@ -122,12 +122,8 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
 <script type="text/javascript" src="js/rss.js"></script>
 <script language="Javascript" type="text/javascript">
     //<![CDATA[
-google.load("feeds", "1");
-function b(){
-google.load("feeds", "1");
-a();
-}
 function a(){
+google.load("feeds", "1");
 google.setOnLoadCallback(function() {
       var feed = new google.feeds.Feed("http://fastpshb.appspot.com/feed/1/fastpshb");
       feed.load(function(result) {
