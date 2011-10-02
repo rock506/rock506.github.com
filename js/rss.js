@@ -52,8 +52,9 @@ var RssView = Backbone.View.extend({
       "click .btn" : "showOrHide",
     },
     showOrHide: function(e){
-        var preview = $(e.target).closest(".content-preview");
-        var complete = $(e.target).closest(".content-complete");
+        var parent = $(e.target).closest(".modal");
+        var preview = $(".content-preview",parent);
+        var complete = $(".content-complete",parent);
         if(preview.css("display")=="none"){
             preview.css("display","block");
             complete.css("display","none");
