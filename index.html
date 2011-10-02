@@ -124,8 +124,8 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
     google.load("feeds", "1");
 function OnLoad() {
   var feedControl = new google.feeds.FeedControl();
-  feedControl.addFeed("http://www.digg.com/rss/index.xml", "Digg");
-  feedControl.addFeed("http://feeds.feedburner.com/Techcrunch", "TechCrunch");
+  feedControl.addFeed("http://www.cnblogs.com/rock506/rss.aspx", "rock506");
+  feedControl.addFeed("http://www.cnblogs.com/jkisjk/rss.aspx", "jk");
   feedControl.draw(document.getElementById("article_rss"));
 }
 google.setOnLoadCallback(OnLoad);
