@@ -60,17 +60,23 @@ var RssView = Backbone.View.extend({
       "click" : "load",
       "click .btn" : "showOrHide",
       "click .title" : "showOrHide",
+      "click #inp_rss":"addRssItem"
+    },
+    addRssItem: function(){
+        var inpValue = $("#inp_rss").value.split("|");
+        this.collection.add({name:inpValue[1]|"未命名",url:inpValue[0]});
     },
     showOrHide: function(e){
         var parent = $(e.target).closest(".modal");
+        var btn = $(e.target).closest(".btn");
         var preview = $(".content-preview",parent);
         var complete = $(".content-complete",parent);
         if(preview.css("display")=="none"){
-            $(e.target).text("展开");
+            $(btn).text("展开");
             preview.css("display","block");
             complete.css("display","none");
         }else{
-            $(e.target).text("收起");
+            $(btn).text("收起");
             preview.css("display","none");
             complete.css("display","block");
         }
@@ -98,7 +104,7 @@ var RssView = Backbone.View.extend({
                         return article.render();
                     });
                     $("#rss-name").html("<h1>"+result.feed.title+" <small>"+result.feed.description+"</small></h1>");
-                    $("#article_rss").append(tpl.join(""));
+                    $("#article_rss").html(tpl.join(""));
                 }
             });
         }
