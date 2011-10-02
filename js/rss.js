@@ -38,7 +38,7 @@ var RssView = Backbone.View.extend({
     },
     template: _.template($('#rss-template').html()),
     events: {
-      "click" : "load",
+      "click #list_rss a" : "load",
     },
     render: function(model) {
         $("body").append(this.template());
