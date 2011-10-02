@@ -32,7 +32,7 @@ var RssItemView = Backbone.View.extend({
 });
 //View
 var RssView = Backbone.View.extend({
-    tabName: "div"
+    tabName: "div",
     initialize: function() {
         this.render();
         this.collection.bind("add",this.addItem,this);
