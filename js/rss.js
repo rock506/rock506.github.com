@@ -56,9 +56,11 @@ var RssView = Backbone.View.extend({
         var preview = $(".content-preview",parent);
         var complete = $(".content-complete",parent);
         if(preview.css("display")=="none"){
+            $(e.target).text("展开");
             preview.css("display","block");
             complete.css("display","none");
         }else{
+            $(e.target).text("收起");
             preview.css("display","none");
             complete.css("display","block");
         }
