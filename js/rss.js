@@ -51,7 +51,7 @@ var RssView = Backbone.View.extend({
       "click" : "load",
     },
     render: function(model) {
-        $("#feed").append(this.template());
+        $("body").append(this.template());
     },
     addItem: function(model) {
         var item = new RssItemView({model:model});
@@ -63,6 +63,7 @@ var RssView = Backbone.View.extend({
             var feed = new google.feeds.Feed(url);
             feed.load(function(result){
                 if (!result.error) {
+                    console.log(result);
                     var tpl = result.feed.entries.map(function(item){
                         var title = item.title;
                         var content = item.content;

@@ -8,15 +8,22 @@
 <link href="css/rss.css" rel="stylesheet">
 <style>
 html,body{ width:100%; height:100%; margin:0; padding:0; }
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
 </style>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="span10" id="feed"></div>
-        <div class="span4"></div>
-    </div>
-</div>
 <script src="https://www.google.com/jsapi?key=ABQIAAAAftWTL2xH16u0mao2qUK-_BRsk3qQPXj2vFecBxKMTXFrpq-LdRT015T4Y7ei-EpVg-5x3GSxSUe_ng" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/underscore-1.1.6.js"></script>
@@ -41,14 +48,32 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
 <a href="###" rss-url="<%= url %>"><%= name %></a>
 </script>
 <script type="text/template" id="rss-content-template">
-<img class="thumbnail" width="210" height="150" <%= img %>/><div><h2><%= title %></h2><%= content %></div>
+<div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1">
+  <div class="modal-header">
+    <h3><%= title %></h3>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+    <img class="thumbnail span3" width="150" height="100" <%= img %>/>
+    <div class="span6"><%= content %></div></div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">展开</a>
+  </div>
+</div>
 </script>
 <script type="text/template" id="rss-template">
-<div id="rss">
-    <input type="text" id="inp_rss"/>
-    <input type="button" id="inp_rss" value="add" class="btn"/>
-    <ul id="list_rss"></ul>
-    <div id="article_rss"></div>
+<div class="container">
+    <div class="row">
+        <div class="span10" id="feed">
+        <div id="article_rss"></div>
+        </div>
+        <div class="span4">
+            <input type="text" id="inp_rss" style="width:150px"/>
+            <input type="button" id="inp_rss" value="add" class="btn"/>
+            <ul id="list_rss"></ul>
+        </div>
+    </div>
 </div>
 </script>
 <script type="text/javascript">
