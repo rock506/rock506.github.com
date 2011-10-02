@@ -19,7 +19,10 @@ var RssItemView = Backbone.View.extend({
     initialize: function() {
     },
     events: {
-      "click a" : "load",
+      "click .link" : "load",
+      "click .close" : "remove",
+      "mouseover":"showClose",
+      "mouseout":"hideClose",
     },
     render: function() {
         $(this.el).html(this.template(this.model.toJSON()));
@@ -27,7 +30,15 @@ var RssItemView = Backbone.View.extend({
     },
     load: function(e){
         var url = $(e.target).attr("rss-url");
-
+    },
+    remove: function(e){
+        $(this.el).remove();
+    },
+    showClose: function(e){
+        $(".close",this.el).css("display","inline");
+    },
+    hideClose: function(e){
+        $(".close",this.el).css("display","none");
     }
 });
     //View
@@ -48,7 +59,7 @@ var RssView = Backbone.View.extend({
     events: {
       "click" : "load",
       "click .btn" : "showOrHide",
-      "click .btn" : "showOrHide",
+      "click .title" : "showOrHide",
     },
     showOrHide: function(e){
         var parent = $(e.target).closest(".modal");

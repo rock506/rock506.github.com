@@ -49,7 +49,10 @@ html,body{ width:100%; height:100%; margin:0; padding:0; background-color: #EEEE
 </div>
 </script>
 <script type="text/template" id="rss-item-template">
-<a href="###" rss-url="<%= url %>"><%= name %></a>
+<div class="alert-message info">
+    <a class="close" style="display:none;" href="#">×</a>
+    <a class="link" href="###" rss-url="<%= url %>" style="color:#fff;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);"><%= name %></a>
+</div>
 </script>
 <script type="text/template" id="rss-content-template">
 <div class="rss-content">
