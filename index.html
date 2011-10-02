@@ -110,7 +110,7 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
         <ul id="list_rss"></ul>
         <div id="article_rss"></div>
     </div>
-<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAftWTL2xH16u0mao2qUK-_BRsk3qQPXj2vFecBxKMTXFrpq-LdRT015T4Y7ei-EpVg-5x3GSxSUe_ng"></script>
+<script src="https://www.google.com/jsapi?key=ABQIAAAAftWTL2xH16u0mao2qUK-_BRsk3qQPXj2vFecBxKMTXFrpq-LdRT015T4Y7ei-EpVg-5x3GSxSUe_ng" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/underscore-1.1.6.js"></script>
 <script type="text/javascript" src="js/backbone.js"></script>
@@ -118,5 +118,26 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
 <a href="###" rss-url="<%= url %>"><%= name %></a>aa
 </script>
 <script type="text/javascript" src="js/rss.js"></script>
+<script language="Javascript" type="text/javascript">
+    //<![CDATA[
+google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://fastpshb.appspot.com/feed/1/fastpshb");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("article_rss");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+    //]]>
+    </script>
   </body>
 </html>
