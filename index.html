@@ -109,19 +109,24 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
         <input type="button" id="inp_raa" value="add"/>
         <ul id="list_rss"></ul>
         <div id="article_rss"></div>
-        <a href="###" onclick="a()"></a>
+        <a href="###" onclick="a()">aaaaaaaaaaaa</a>
+        <a href="###" onclick="b()">bbbbbbbbbbb</a>
     </div>
 <script src="https://www.google.com/jsapi?key=ABQIAAAAftWTL2xH16u0mao2qUK-_BRsk3qQPXj2vFecBxKMTXFrpq-LdRT015T4Y7ei-EpVg-5x3GSxSUe_ng" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/underscore-1.1.6.js"></script>
 <script type="text/javascript" src="js/backbone.js"></script>
 <script type="text/template" id="rss-item-template">
-<a href="###" rss-url="<%= url %>"><%= name %></a>aa
+<a href="###" rss-url="<%= url %>"><%= name %></a>
 </script>
 <script type="text/javascript" src="js/rss.js"></script>
 <script language="Javascript" type="text/javascript">
     //<![CDATA[
 google.load("feeds", "1");
+function b(){
+google.load("feeds", "1");
+a();
+}
 function a(){
 google.setOnLoadCallback(function() {
       var feed = new google.feeds.Feed("http://fastpshb.appspot.com/feed/1/fastpshb");
