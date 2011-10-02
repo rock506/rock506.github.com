@@ -33,7 +33,6 @@ var RssItemView = Backbone.View.extend({
 //View
 var RssView = Backbone.View.extend({
     el: $("body"),
-    feedControl: new google.feeds.FeedControl(),
     initialize: function() {
         this.render();
         this.collection.bind("add",this.addItem,this);
@@ -52,8 +51,9 @@ var RssView = Backbone.View.extend({
     load: function(e){
         var url = $(e.target).attr("rss-url");
         if(url){
-            this.feedControl.addFeed(url);
-            this.feedControl.draw($("#article_rss"));
+            var feedControl= new google.feeds.FeedControl();
+            feedControl.addFeed(url);
+            feedControl.draw($("#article_rss"));
         }
     }
 });
