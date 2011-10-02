@@ -48,17 +48,18 @@ var RssView = Backbone.View.extend({
     events: {
       "click" : "load",
       "click .btn" : "showOrHide",
+      "click .btn" : "showOrHide",
     },
     showOrHide: function(e){
         var parent = $(e.target).closest(".modal");
         var preview = $(".content-preview",parent);
         var complete = $(".content-complete",parent);
         if(preview.css("display")=="none"){
-            $(e.target).text("展开");
+            $(e.target).text("灞曞紑");
             preview.css("display","block");
             complete.css("display","none");
         }else{
-            $(e.target).text("收起");
+            $(e.target).text("鏀惰捣");
             preview.css("display","none");
             complete.css("display","block");
         }
@@ -85,6 +86,7 @@ var RssView = Backbone.View.extend({
                         var article = new RssArticleView({model:{'img':img?img[0]:"",'title':title,'contentSnippet':contentSnippet,'content':content}});
                         return article.render();
                     });
+                    $("#rss-name").html("<h1>"+result.feed.author+" <small>"+result.feed.description+"</small></h1>");
                     $("#article_rss").append(tpl.join(""));
                 }
             });
