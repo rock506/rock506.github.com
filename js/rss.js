@@ -32,17 +32,20 @@ var RssItemView = Backbone.View.extend({
 });
 //View
 var RssView = Backbone.View.extend({
-    el: $("#list_rss"),
     initialize: function() {
-      google.load('feeds','1');
-      this.collection.bind('add', this.render, this);
+        this.render();
+        this.collection.bind("add",this.addItem,this);
     },
+    template: _.template($('#rss-template').html()),
     events: {
       "click" : "load",
     },
     render: function(model) {
+        $("body").append(item.template());
+    },
+    addItem: function(model) {
         var item = new RssItemView({model:model});
-        $(this.el).append(item.render());
+        $("#list_rss").append(item.render());
     },
     load: function(e){
         var url = $(e.target).attr("rss-url");
