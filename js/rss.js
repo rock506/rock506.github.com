@@ -66,7 +66,7 @@ var RssView = Backbone.View.extend({
                     var tpl = result.feed.entries.map(function(item){
                         var title = item.title;
                         var content = item.content;
-                        var img = /src *= *('|")?(\w|\\|\/|\.)+(((p|P)(n|N)(g|G))|((j|J)(p|P)(g|G))|((g|G)(i|I)(f|F)))('|"| *|>)?/.exec(content);
+                        var img = /src *= *('|")?.*(((p|P)(n|N)(g|G))|((j|J)(p|P)(g|G))|((g|G)(i|I)(f|F)))('|"| *|>)?/.exec(content);
                         var article = new RssArticleView({model:{'img':img?img[0],"",'title':title,'content':content}});
                         return article.render();
                     });
