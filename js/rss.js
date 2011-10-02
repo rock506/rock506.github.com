@@ -35,6 +35,20 @@ var RssArticleView = Backbone.View.extend({
     tagName:  "div",
     className: "rss-content",
     template: _.template($('#rss-content-template').html()),
+    events: {
+      "click .modal-footer .btn" : "showOrHide",
+    },
+    showOrHide: function(){
+        var preview = $(".content-preview");
+        var complete = $(".content-complete");
+        if(preview.css("display")=="none"){
+            preview.css("display","block");
+            complete.css("display","none");
+        }else{
+            preview.css("display","none");
+            complete.css("display","block");
+        }
+    },
     render: function() {
         return this.template(this.model);
     }
@@ -66,9 +80,10 @@ var RssView = Backbone.View.extend({
                     console.log(result);
                     var tpl = result.feed.entries.map(function(item){
                         var title = item.title;
+                        var contentSnippet = item.contentSnippet;
                         var content = item.content;
                         var img = /src *= *('|")?(\w|\\|\/|\.|\:)+(((p|P)(n|N)(g|G))|((j|J)(p|P)(g|G))|((g|G)(i|I)(f|F)))('|"| *|>)?/.exec(content);
-                        var article = new RssArticleView({model:{'img':img?img[0]:"",'title':title,'content':content}});
+                        var article = new RssArticleView({model:{'img':img?img[0]:"",'title':title,'contentSnippet':contentSnippet,'content':content}});
                         return article.render();
                     });
                     $("#article_rss").append(tpl.join(""));

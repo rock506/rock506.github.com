@@ -53,9 +53,11 @@ height: 0;
     <h3><%= title %></h3>
   </div>
   <div class="modal-body">
-    <div class="row">
-    <img class="thumbnail span3" width="150" height="100" <%= img %>/>
-    <div class="span6"><%= content %></div></div>
+    <div class="row content-preview">
+        <img class="thumbnail span3" width="150" height="100" <%= img %>/>
+        <div class="span6"><%= contentSnippet %></div>
+    </div>
+    <div class="content-complete" style="display:none;"><%= content %></div>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn">展开</a>
