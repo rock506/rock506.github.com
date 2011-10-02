@@ -63,7 +63,7 @@ var RssView = Backbone.View.extend({
       "click #inp_rss":"addRssItem"
     },
     addRssItem: function(){
-        var inpValue = $("#inp_rss").value.split("|");
+        var inpValue = $("#inp_rss").val().split("|");
         this.collection.add({name:inpValue[1]|"未命名",url:inpValue[0]});
     },
     showOrHide: function(e){
