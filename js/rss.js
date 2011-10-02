@@ -63,7 +63,11 @@ var RssView = Backbone.View.extend({
     template: _.template($('#rss-template').html()),
     events: {
       "click" : "load",
+      "click .btn" : "showOrHide",
     },
+          showOrHide: function(e){
+      console.log(e);
+      },
     render: function(model) {
         $("body").append(this.template());
     },
@@ -89,10 +93,6 @@ var RssView = Backbone.View.extend({
                     $("#article_rss").append(tpl.join(""));
                 }
             });
-            /*var feedControl= new google.feeds.FeedControl();
-            feedControl.addFeed(url,"506");
-            feedControl.draw($("#article_rss")[0]);
-            console.log($("#article_rss"));*/
         }
     }
 });
