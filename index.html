@@ -108,6 +108,7 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
         <input type="button" id="inp_raa" value="add"/>
         <ul id="list_rss"></ul>
         <div id="article_rss"></div>
+        <div id="article_rss2"></div>
         <a href="###" onclick="a()">aaaaaaaaaaaa</a>
         <a href="###" onclick="b()">bbbbbbbbbbb</a>
     </div>
@@ -121,8 +122,11 @@ html,body{ width:100%; height:100%; margin:0; padding:0; }
 <script type="text/javascript" src="js/rss.js"></script>
 <script language="Javascript" type="text/javascript">
     //<![CDATA[
-    google.load("feeds", "1");
+google.load("feeds", "1");
+google.setOnLoadCallback(function(){
     setTimeout(a,3000);
+});
+    
 function a(){
 console.log("call");
 function OnLoad() {
@@ -132,7 +136,10 @@ function OnLoad() {
   feedControl.draw(document.getElementById("article_rss"));
   console.log(feedControl);
 }
-google.setOnLoadCallback(OnLoad);
+function b(){
+    var feedControl = new google.feeds.FeedControl();
+  feedControl.addFeed("http://www.cnblogs.com/jkisjk/rss.aspx", "jk");
+  feedControl.draw(document.getElementById("article_rss2"));
 }
     //]]>
     </script>
