@@ -32,13 +32,14 @@ var RssItemView = Backbone.View.extend({
 });
 //View
 var RssView = Backbone.View.extend({
+    tabName: "div"
     initialize: function() {
         this.render();
         this.collection.bind("add",this.addItem,this);
     },
     template: _.template($('#rss-template').html()),
     events: {
-      "click #list_rss a" : "load",
+      "click" : "load",
     },
     render: function(model) {
         $("body").append(this.template());
