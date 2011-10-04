@@ -27,7 +27,7 @@
   }
 
   $(function () {
-    $('html').bind("click", clearMenus)
+    $(".dropdown").bind("mouseleave", clearMenus)
     $('body').dropdown( '[data-dropdown] a.menu, [data-dropdown] .dropdown-toggle' )
   })
 
@@ -36,11 +36,10 @@
 
   $.fn.dropdown = function ( selector ) {
     return this.each(function () {
-      $(this).delegate(selector || d, 'click', function (e) {
+      $(this).delegate(selector || d, 'mouseenter', function (e) {
         var li = $(this).parent('li')
           , isActive = li.hasClass('open')
-
-        clearMenus()
+        //clearMenus()
         !isActive && li.toggleClass('open')
         return false
       })

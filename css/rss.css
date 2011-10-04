@@ -11,7 +11,7 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .content{
 margin: 0 -20px;
-padding: 60px 20px 20px 20px;
+padding: 20px;
 background-color: #FFF;
 border-radius: 0 0 6px 6px;
 -webkit-border-radius: 0 0 6px 6px;
@@ -38,6 +38,7 @@ border-radius: 0;
 }
 #list_rss{
 	margin:20px 0;
+	list-style:none;
 }
 .alert-message{
 	margin:5px 0;

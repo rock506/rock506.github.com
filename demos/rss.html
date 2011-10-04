@@ -1,0 +1,82 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<meta charset="gb2312"> 
+<title> rss </title> 
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/rss.css" rel="stylesheet">
+<style>
+html,body{ width:100%; height:100%; margin:0; padding:0; background-color: #EEEEEE;}
+</style>
+</head>
+<body>
+<script src="https://www.google.com/jsapi?key=ABQIAAAAftWTL2xH16u0mao2qUK-_BRsk3qQPXj2vFecBxKMTXFrpq-LdRT015T4Y7ei-EpVg-5x3GSxSUe_ng" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="../js/underscore-1.1.6.js"></script>
+<script type="text/javascript" src="../js/backbone.js"></script>
+<script type="text/template" id="rss-item-template">
+<div class="alert-message info">
+    <a class="close" style="display:none;" href="#">×</a>
+    <a class="link" href="###" rss-url="{{url}}" style="color:#fff;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);">{{name}}</a>
+</div>
+</script>
+<script type="text/template" id="rss-content-template">
+<div class="rss-content">
+<div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1">
+  <div class="modal-header">
+    <h3><a href="###" class="title">{{title}}</a></h3>
+  </div>
+  <div class="modal-body">
+    <div class="row content-preview">
+        <img class="thumbnail span3" width="150" height="100" {{img}}/>
+        <div class="span6">{{contentSnippet}}</div>
+    </div>
+    <div class="content-complete" style="display:none;">{{content}}</div>
+  </div>
+  <div class="modal-footer">
+    <a href="###" class="btn">展开</a>
+  </div>
+</div>
+</div>
+</script>
+<script type="text/template" id="rss-template">
+<div class="container">
+<div class="content">
+    <div id="rss-name" class="page-header">
+      <h1>Author name <small>description</small></h1>
+    </div>
+    <div class="row">
+        <div class="span11" id="feed">
+        <div id="article_rss">content</div>
+        </div>
+        <div class="span4">
+            <input type="text" id="inp_rss" style="width:150px"/>
+            <input type="button" id="btn_rss" value="add" class="btn"/>
+            <ul id="list_rss"></ul>
+        </div>
+    </div>
+</div>
+</div>
+</script>
+<script type="text/javascript">
+var App = {
+    Models:{},
+    Views:{},
+    Collections:{}
+};
+</script>
+<script type="text/javascript" src="../js/rss.js"></script>
+<script language="Javascript" type="text/javascript">
+google.load("feeds", "1");
+google.setOnLoadCallback(function(){
+    collection.add([
+        {name:'JKisJK',url:'http://www.cnblogs.com/jkisjk/rss.aspx'},
+        {name:'UED',url:'http://ued.taobao.com/blog/feed/'},
+        {name:'CDC',url:'http://cdc.tencent.com/?feed=rss2'},
+        {name:'rock506',url:'http://www.cnblogs.com/rock506/rss.aspx'},
+        {name:'ququ',url:'http://www.imququ.com/rss.html'}
+    ]);
+});
+</script>
+  </body>
+</html>

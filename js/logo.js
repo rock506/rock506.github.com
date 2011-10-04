@@ -4,7 +4,7 @@ App.Views.Logo = Backbone.View.extend({
         this.render();
     }
     ,render: function(){
-        $("body").append(this.template());
+        $(".index").append(this.template());
     }
 });
-//new App.Views.Logo();
+new App.Views.Logo();
