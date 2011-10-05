@@ -1,13 +1,16 @@
-var SiteModel = Backbone.Model.extend({
-    view: $(".main")
+var SiteView = Backbone.View.extend({
+    el:$("body")
+    ,view: $(".main")
     ,view2: $(".main .inner")
     ,status:0
     ,isLock: false
     ,iframe: $("#demo-container")
+    ,modalTemplate:_.template($("#modal-template").html())
     ,initialize: function(){
         this.setPageSize();
         this.bind("openInIframe",this.openInIframe,this);
         $(window).resize.call(this,this.setPageSize);
+        $("body").append(this.modalTemplate());
     }
     ,setPageSize: function(){
         var w = this.getPageWidth();
@@ -56,7 +59,7 @@ var SiteModel = Backbone.Model.extend({
         return this.view.css("width");
     }
 });
-var Site = new SiteModel();
+var Site = new SiteView();
 var Nav = {
     Model:{}
     ,Collection:{}
@@ -67,19 +70,29 @@ Nav.Model.Base = Backbone.Model.extend({});
 Nav.Collection.Base = Backbone.Collection.extend({model:Nav.Model.Base});
 Nav.View.Base = Backbone.View.extend({
     template: _.template($("#nav-item-template").html())
+    ,modalTemplate: _.template($("#modal-template").html())
     ,events: {
-        "click .openInIframe":"openInIframe"
+        "click .openInIframe":"openInIframe",
+        "click .add":"openAddModal"
     }
     ,initialize: function(){
         this.collection.bind("add",this.render,this);
+        $("body").append(this.modalTemplate());
+        $(".primary").click(this.add);
     }
     ,render: function(model){
-        $(".dropdown-menu",this.el).append(this.template(model.toJSON()));
+        //$(".dropdown-menu",this.el).append(this.template(model.toJSON()));
+        $(this.template(model.toJSON())).insertBefore($(".dropdown-menu .divider",this.el));
     }
     ,openInIframe: function(e){
         e.preventDefault();
         var url = $(e.target).attr("href");
         Site.trigger("openInIframe",url);
+    }
+    ,openAddModal: function(e){
+        $("body").append(this.modalTemplate({title:"add blog"}));
+    }
+    ,add: function(e){
     }
 });
 //Demos
@@ -87,12 +100,18 @@ Nav.Model.Demos = Nav.Model.Base;
 Nav.Collection.Demos = Nav.Collection.Base;
 Nav.View.Demos = Nav.View.Base.extend({
     el:$("#demos-container")
+    ,add: function(e){
+        alert("#demos");
+    }
 });
 //Blogs
 Nav.Model.Blogs = Nav.Model.Base;
 Nav.Collection.Blogs = Nav.Collection.Base;
 Nav.View.Blogs = Nav.View.Base.extend({
     el:$("#blogs-container")
+    ,add: function(e){
+        alert("#blogs");
+    }
 });
 var demosCollection = new Nav.Collection.Demos();
 var blogsCollection = new Nav.Collection.Blogs();

@@ -7,6 +7,7 @@
 <title> home - Rock506 </title>
 <meta name="description" content="">
 <meta name="keywords" content="">
+<link rel="shortcut icon" href="favicon.ico"/>
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/home.css" rel="stylesheet">
 <link href="css/logo.css" rel="stylesheet">
@@ -23,14 +24,18 @@
         <li id="demos-container" class="dropdown">
           <a href="#" class="dropdown-toggle">Demos</a>
           <ul class="dropdown-menu">
+            <li class="divider"></li>
+            <li><a href="###" data-controls-modal="modal-from-dom" data-backdrop="true" data-keyboard="true" class="add">+ add</a></li>
           </ul>
         </li>
         <li id="blogs-container" class="dropdown">
           <a href="#" class="dropdown-toggle">Blogs</a>
           <ul class="dropdown-menu">
+            <li class="divider"></li>
+            <li><a href="###" data-controls-modal="modal-from-dom" data-backdrop="true" data-keyboard="true" class="add">+ add</a></li>
           </ul>
         </li>
-        <li><a href="#about" onclick="a()">About</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
       <form action="" class="pull-right">
         <input class="input-small" type="text" placeholder="Username">
@@ -55,8 +60,31 @@
 <script type="text/javascript" src="js/underscore-1.1.6.js"></script>
 <script type="text/javascript" src="js/backbone.js"></script>
 <script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="js/bootstrap-modal.js"></script>
 <script type="text/template" id="nav-item-template">
 <li><a class="openInIframe" href="{{url}}" target="_blank">{{name}}</a></li>
+</script>
+<script type="text/template" id="modal-template">
+<div id="modal-from-dom" class="modal hide fade" style="display: none; ">
+    <div class="modal-header">
+      <a href="#" class="close">¡Á</a>
+      <h3>+Add</h3>
+    </div>
+    <div class="modal-body">
+          <div class="input-prepend">
+            <span class="add-on">Name</span>
+            <input class="medium" id="prependedInput" name="prependedInput" size="16" type="text">
+          </div>
+          <div class="input-prepend">
+            <span class="add-on">Link</span>
+            <input class="medium span7" id="prependedInput" name="prependedInput" size="16" type="text">
+          </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn primary">Add</a>
+      <a href="#" class="btn secondary">Cancel</a>
+    </div>
+</div>
 </script>
 <script type="text/template" id="logo-template">
 <div id="logo-506">
