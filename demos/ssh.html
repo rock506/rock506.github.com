@@ -18,6 +18,8 @@
 <script>
 for(var i=0;i<100;i++){
   T.cookie.set("rock"+i,i);
+}
+for(var i=0;i<100;i++){
   T.g("doc").innerHTML += T.cookie.get("rock"+i)+"_";
 }
 </script>
