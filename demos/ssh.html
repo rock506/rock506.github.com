@@ -21,7 +21,7 @@ for(var i=0;i<4096;i++){
   c+="a";
 }
 T.cookie.set("rock",c);
-T.g("doc").innerHTML = c.length;
+T.g("doc").innerHTML = T.cookie.get("rock").length;
 </script>
 </body>
 </html>
