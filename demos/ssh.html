@@ -16,12 +16,10 @@
 </div>
 <script type="text/javascript" src="http://img.baidu.com/js/tangram-1.3.9.js"></script>
 <script>
-var c;
-for(var i=0;i<2096;i++){
-  c+="b";
+for(var i=0;i<60;i++){
+  T.cookie.set("rock"+i,i);
+  T.g("doc").innerHTML += T.cookie.get("rock"+i);
 }
-T.cookie.set("rock",c);
-T.g("doc").innerHTML = T.cookie.get("rock").length;
 </script>
 </body>
 </html>
