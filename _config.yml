@@ -1,0 +1,17 @@
+auto:	          true
+
+markdown:         rdiscount
+pygments:         true
+paginate:         6
+permalink:        /:title
+
+title:            i m rock506
+url:              http://rock506.info
+feed:             /atom.xml
+author:
+    name:         rock506
+    weibo:      weibo.com/rock506
+description:      "rock506\'s Blog"
+
+copyright:
+    - Design by <a href="http://rock506.info" rel="friend" title="rock506" target="_blank">rock506</a> &copy; Copyright 2011
