@@ -28,6 +28,15 @@
     
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/google-code-prettify/prettify.js"></script>
+    <script>
+    ;(function(){
+        var pre=document.getElementsByTagName("pre");
+        for(var i=0,len=pre.length;i<len;i++){
+            pre[i].className="prettyprint";
+        }
+        prettyPrint();
+    })();
+    </script>
     <!--百度统计-->
     {% include tongji.html %}
     <!--/百度统计-->
