@@ -1,11 +1,6 @@
 ---
 layout: framework
 ---
-<style>
-  body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-  }
-</style>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -14,11 +9,11 @@ layout: framework
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Rock506的blog~</a>
+      <a class="brand" href="#">Rock506的博客</a>
       <div class="nav-collapse">
         <ul class="nav">
           <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown open">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown 2 <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
@@ -37,7 +32,14 @@ layout: framework
 </div>
 
 <div class="container">
-
-{{ content }}
-
+  <div class="row-fluid">
+    <div class="span8">
+      {{ content }}
+    </div>
+    <div class="span4">
+      <!--微博-->
+      {% include weibo.html %}
+      <!--/微博-->
+    </div>
+  </div>
 </div> 
