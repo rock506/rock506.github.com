@@ -1,17 +1,12 @@
-auto:             true
-
-markdown:         rdiscount
-pygments:         true
-paginate:         6
-permalink:        /:title
-
-title:            I'm BeiYuu
-url:              http://www.rock506.info
-feed:             /atom.xml
+server:         true
+permalink:      /blog/:title/
+url:            http://rock506.info
+markdown:       rdiscount
+pygments:       true
+paginate:       6
+title:          I'm Rock506
+feed:           /atom.xml
 author:
-    name:         BeiYuu
-    twitter:      twitter.com/beiyuu
-description:      "BeiYuu\'s Blog"
-
-copyright:
-    - Design by <a href="http://beiyuu.com" rel="friend" title="BeiYuu" target="_blank">BeiYuu</a> &copy; Copyright 2011
+    name:       Rock506
+    weibo:      http://weibo.com/rock506
+description:    rock506's Blog

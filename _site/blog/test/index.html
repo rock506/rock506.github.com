@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Running Jekyll on window | I'm Rock506</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="rock506's Blog">
+    <meta name="author" content="Rock506">
+
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="/assets/js/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+    <script src="/assets/js/jquery-1.7.2.min.js"></script>
+  </head>
+
+  <body>
+    
+    <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/blog">Rock506的博客</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown 2 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span9">
+      <h1>Running Jekyll on window</h1>
+
+<p>jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。但是可以配合第三方服务,例如disqus。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。[more][http://baike.baidu.com/view/7878719.htm]</p>
+
+<h2>安装</h2>
+
+<ul>
+<li>安装Ruby到C:\ruby，[下载][http://rubyinstaller.org/downloads/]；</li>
+<li>安装Ruby development kit到C:\devkit，[下载][http://rubyinstaller.org/downloads/]；</li>
+<li><p>cd devkit</p>
+
+<p>  ruby dk.rb init
+  ruby dk.rb install
+  gem install jekyll</p></li>
+</ul>
+
+
+    </div>
+    <div class="span3">
+      <!--category-->
+      <div class="well">
+  <ul class="nav nav-list">
+    <li class="nav-header">Categories List</li>
+    
+    <li><a href="#">git1</a></li>
+    
+    <li class="divider"></li>
+    <li><a href="#">Help</a></li>
+  </ul>
+</div>
+      <!--/category-->
+      
+      <!--微博-->
+      <iframe width="270" height="300" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=270&height=300&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=1748652614&verifier=465b5d97&dpc=1"></iframe>
+      <!--/微博-->
+    </div>
+  </div>
+</div> 
+    
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/google-code-prettify/prettify.js"></script>
+    <script>
+    ;(function(){
+        var pre=document.getElementsByTagName("pre");
+        for(var i=0,len=pre.length;i<len;i++){
+            pre[i].className="prettyprint";
+        }
+        prettyPrint();
+    })();
+    </script>
+    <!--百度统计-->
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7e8afd1c786ffa0f45bcccb10b4f97d7' type='text/javascript'%3E%3C/script%3E"));
+</script>
+    <!--/百度统计-->
+  </body>
+</html>
