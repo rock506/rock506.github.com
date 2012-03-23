@@ -1,12 +1,27 @@
 ---
 layout: default
 ---
-{% for post in site.categories.blog limit:10 %}
-<div>
- <h1>{{ post.title }}</h1>
- <p>href="http://rock506.info{{ post.url }}"</p>
- <p>{{ post.date | date_to_xmlschema }}</p>
- <p>http://rock506.info{{ post.id }}</p>
- <div>{{ post.content | xml_escape }}</div>
-</div>
+<!--
+page data:
+{
+    layout
+    title
+    category
+    url
+    date
+    id
+    categories
+    next
+    previous
+    tags
+    content
+}
+-->
+{% for category in site.categories %}
+    {% capture cate %}{{ category | first }}{% endcapture %}
+    <h1>{{ category | first }}</h1>
+    {% for post in site.categories[cate] %}
+        <h3><a href="{{ post['url'] }}">{{ post['title'] }}</a></h3>
+        <p>{{ post['tags'] }}{{ post['date'] }}</p>
+    {% endfor %}
 {% endfor %}
