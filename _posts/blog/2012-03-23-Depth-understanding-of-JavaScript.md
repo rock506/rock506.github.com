@@ -1,7 +1,8 @@
 ---
-layout: default
-title:  深入理解JavaScript系列 - 汤姆大叔
-category: javascript
+layout:     default
+title:      深入理解JavaScript系列 - 汤姆大叔
+category:   Javascript
+tags:       Javascript
 ---
 
 # {{ page.title }}[link](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)

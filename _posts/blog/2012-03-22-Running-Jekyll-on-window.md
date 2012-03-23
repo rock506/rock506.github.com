@@ -1,8 +1,8 @@
 ---
 layout:     default
 title:      Running Jekyll On Windows
-category:   github
-tags:       test test2
+category:   Github
+tags:       git github jekyll
 ---
 
 # {{ page.title }}

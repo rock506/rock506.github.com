@@ -19,9 +19,7 @@ page data:
 -->
 {% for category in site.categories %}
     {% capture cate %}{{ category | first }}{% endcapture %}
-    <h1>{{ category | first }}</h1>
     {% for post in site.categories[cate] %}
-        <h3><a href="{{ post['url'] }}">{{ post['title'] }}</a></h3>
-        <p>{{ post['tags'] }}{{ post['date'] }}</p>
+        {{ post['content'] }}
     {% endfor %}
 {% endfor %}
