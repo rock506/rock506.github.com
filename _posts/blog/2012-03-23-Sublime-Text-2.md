@@ -1,7 +1,8 @@
 ---
-layout: default
-title:  Sublime Text 2 - 码农神器
-category: Tools
+layout:     default
+title:      Sublime Text 2 - 码农神器
+category:   Tools
+tags:       sublime
 ---
 
 # {{ page.title }}

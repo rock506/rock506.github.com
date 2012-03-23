@@ -6,12 +6,19 @@ layout: framework
   <div class="row-fluid">
     <div class="span9">
       {{ content }}
+      <!--pager-->
+      {% include pager_prev_next.html %}
+      <!--/pager-->
     </div>
     <div class="span3">
       <!--category-->
       {% include category.html %}
       <!--/category-->
       
+      <!--tags-->
+      {% include tags.html %}
+      <!--/tags-->
+
       <!--微博-->
       {% include weibo.html %}
       <!--/微博-->

@@ -3,7 +3,8 @@ permalink:      /blog/:title/
 url:            http://rock506.info
 markdown:       rdiscount
 pygments:       true
-paginate:       6
+paginate:       3
+plugins:        ./_plugins
 title:          I'm Rock506
 feed:           /atom.xml
 author:
