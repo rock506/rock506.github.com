@@ -1,0 +1,19 @@
+<div class="pagination">
+  <ul>
+    <li><a href="#">Prev</a></li>
+    <li class="active">
+      <a href="#">1</a>
+    </li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
+
+{{ paginator.per_page }}      Number of posts per page.
+{{ paginator.total_posts }}   Total number of posts.
+{{ paginator.total_pages }}   Total number of pages.
+{{ paginator.page }}          The number of the current page.
+{{ paginator.previous_page }} The number of the previous page.
+{{ paginator.next_page }}     The number of the next page.

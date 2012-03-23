@@ -1,0 +1,10 @@
+<div class="well">
+  <p class="nav-header">Tags List</p>
+  <div>
+    {% for tag in site.tags %}
+    <a style="font-size:{{ tag | last | size | times:10  }}px" href="">
+    {{ tag | first }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
