@@ -3,7 +3,7 @@
     <li class="nav-header">Categories List</li>
     {% for category in site.categories %}
     <li>
-        <a href="/categories/{{ category | first }}/">
+        <a href="/blog/categories.html#{{ category | first }}">
         {{ category | first }} ({{ category | last | size }})
         </a>
     </li>

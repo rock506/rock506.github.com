@@ -1,11 +1,9 @@
 ---
-layout:     default
+layout:     post
 title:      Sublime Text 2 - 码农神器
 category:   Tools
 tags:       sublime
 ---
-
-# {{ page.title }}
 
 ##基本信息
 * 简介：神的编辑器

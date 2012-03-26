@@ -1,11 +1,9 @@
 ---
-layout:     default
+layout:     post
 title:      深入理解JavaScript系列 - 汤姆大叔
 category:   Javascript
 tags:       Javascript
 ---
-
-# {{ page.title }}[link](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
 
 * [深入理解JavaScript系列（1）：编写高质量JavaScript代码的基本要点](http://www.cnblogs.com/TomXu/archive/2011/12/28/2286877.html)
 * [深入理解JavaScript系列（2）：揭秘命名函数表达式](http://www.cnblogs.com/TomXu/archive/2011/12/29/2290308.html)

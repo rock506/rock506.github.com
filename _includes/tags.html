@@ -2,7 +2,7 @@
   <p class="nav-header">Tags List</p>
   <div>
     {% for tag in site.tags %}
-    <a style="font-size:{{ tag | last | size | times:10  }}px" href="">
+    <a style="font-size:{{ tag | last | size | times:10  }}px" href="/blog/tags.html#{{ tag | first }}">
     {{ tag | first }}
     </a>
     {% endfor %}
