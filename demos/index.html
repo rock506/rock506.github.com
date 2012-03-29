@@ -65,7 +65,7 @@ $(function(){
 function loadDemos (argument) {
     var url = '/demos/data.json';
     $.get(url,function(data){
-        var json = JSON.parse(data);
+        var json = jQuery.parseJSON(data);
         var output = AceTemplate.format('tpl-browser',json);
         $('#demos-container').html(output);
         $("#browser").treeview();
