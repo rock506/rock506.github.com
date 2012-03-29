@@ -1,0 +1,28 @@
+[
+    {
+        "folder":"我的demo"
+        ,"files":[
+            {
+                "file":"抽奖程序"
+                ,"html":"/demos/luck_draw/"
+                ,"js":"/demos/luck_draw/index.js"
+                ,"css":"/demos/luck_draw/index.css"
+            }
+            ,{
+                "file":"AStar"
+                ,"html":"/demos/a_star/"
+                ,"js":"/demos/a_star/a_star.js"
+            }
+        ]
+    }
+    ,{
+        "folder":"他人的demo"
+        ,"files":[
+            {
+                "file":"test"
+                ,"html":"/demos"
+                ,"js":"/demos"
+            }
+        ]
+    }
+]

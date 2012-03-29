@@ -1,0 +1,97 @@
+---
+layout: framework
+---
+<link href="/assets/js/jquery-treeview/jquery.treeview.css" rel="stylesheet">
+<style>
+body { padding-top: 10px; }
+.handler{ width:5px;height:100%;position:absolute;right:0;background:#333;top:0;cursor:w-resize;display: none; }
+</style>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span2">
+        <div class="alert alert-info">
+            <i class="icon-th-list icon-white"></i>
+            <strong> Demos</strong>
+            <a href="/" style="float: right;margin-right: -20px;" title="返回博客首页"><i class="icon-home icon-white"></i></a>
+        </div>
+        <div id="demos-container" class="well" style="background-color:#fff;"></div>
+        <div class="handler"></div>
+    </div>
+    <div class="span10">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#view" data-toggle="tab">View</a></li>
+        <li><a href="#html" data-toggle="tab" data-id="#html">Html</a></li>
+        <li><a href="#js" data-toggle="tab" data-id="#js">Javascript</a></li>
+        <li><a href="#css" data-toggle="tab" data-id="#css">Css</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="view" style="border:1px solid #CCC;height:600px;">
+            <iframe id="view-iframe" style="width:100%;height:100%;border:none;"></iframe>
+        </div>
+        <div class="tab-pane" id="html">html</div>
+        <div class="tab-pane" id="js">javascript</div>
+        <div class="tab-pane" id="css">css</div>
+      </div>
+    </div>
+  </div>
+</div> 
+<script src="/assets/js/jquery-treeview/jquery.treeview.js"></script>
+<script src="/assets/js/ace-template.js"></script>
+<script id="tpl-browser" type="text/template">
+<ul id="browser" class="filetree">
+    for (var i = 0; i < this.length; i++) {
+        <li><span class="folder">#{this[i]['folder']}</span>
+          <ul>
+            for (var j = 0; j < this[i]['files'].length; j++) {
+                <li onclick="initDemo('#{this[i]['files'][j]['html']}','#{this[i]['files'][j]['js']}','#{this[i]['files'][j]['css']}')"><span class="file">#{this[i]['files'][j]['file']}</span></li>
+            }
+          </ul>
+        </li>
+    }
+</ul>
+</script>
+<script>
+$(function(){
+    loadDemos();
+    $('a[data-id]').on('shown', function (e) {
+        var containerId = $(e.target).attr('data-id');
+        var isLoad = $(containerId).attr('isLoad');
+        if(!isLoad){
+            var url = $(containerId).attr('data-url');
+            loadCode(url,containerId);
+        }
+    });
+});
+function loadDemos (argument) {
+    var url = '/demos/data.json';
+    $.get(url,function(data){
+        var json = JSON.parse(data);
+        var output = AceTemplate.format('tpl-browser',json);
+        $('#demos-container').html(output);
+        $("#browser").treeview();
+    });
+}
+function loadCode (url,containerId) {
+    $.get(url,function(data){
+        var pre = document.createElement('pre');
+        pre.className = 'prettyprint linenums';
+        $(pre).text(data);
+        $(containerId).html(pre);
+        $(containerId).attr('isLoad','1');
+        prettyPrint(function(){
+            var pre_ok = $('.prettyprint',containerId);
+            pre_ok.removeClass('prettyprint');
+            pre_ok.addClass('pretty-ok');
+        });
+    });
+}
+function initDemo (html,js,css) {
+    $('#view-iframe').attr('src',html);
+    $('#html').attr('data-url',html);
+    $('#html').attr('isLoad','');
+    $('#js').attr('data-url',js);
+    $('#js').attr('isLoad','');
+    $('#css').attr('data-url',css);
+    $('#css').attr('isLoad','');
+}
+</script>
