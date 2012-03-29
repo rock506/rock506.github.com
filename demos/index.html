@@ -64,10 +64,8 @@ $(function(){
 });
 function loadDemos (argument) {
     var url = '/demos/data.json';
-    $.get(url,function(data){
-        data = data + '';
-        var json = JSON.parse(data);
-        var output = AceTemplate.format('tpl-browser',json);
+    $.getJSON(url,function(data){
+        var output = AceTemplate.format('tpl-browser',data);
         $('#demos-container').html(output);
         $("#browser").treeview();
     });
