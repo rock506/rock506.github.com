@@ -26,3 +26,8 @@ page data:
         <p>Posted on:{{ post['date'] | date: "%Y-%m-%d" }}</p>
     {% endfor %}
 {% endfor %}
+<script>
+(function(){
+  $('#nav-categories').addClass('active');
+}());
+</script>
