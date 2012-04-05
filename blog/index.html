@@ -17,9 +17,7 @@ page data:
     content
 }
 -->
-{% for category in site.categories %}
-    {% capture cate %}{{ category | first }}{% endcapture %}
-    {% for post in site.categories[cate] %}
+{% for post in site.posts %}
     <div style="padding:0 0 20px 0;">
         <div class="page-header">
             <div style="border-left: 5px solid #999;padding: 10px;background: #F6F6F6;">
@@ -32,5 +30,4 @@ page data:
         </div>
         {{ post['content'] }}
     </div>
-    {% endfor %}
 {% endfor %}
