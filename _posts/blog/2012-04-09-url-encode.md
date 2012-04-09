@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [转]关于URL编码
+title:      关于URL编码
 category:   编码
 tags:       URL 编码
 ---

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [转]字符编码笔记：ASCII，Unicode和UTF-8
+title:      字符编码笔记：ASCII，Unicode和UTF-8
 category:   编码
 tags:       编码
 ---
