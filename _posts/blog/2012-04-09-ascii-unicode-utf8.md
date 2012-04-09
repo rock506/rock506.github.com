@@ -5,11 +5,11 @@ category:   编码
 tags:       编码
 ---
 
-转自：<http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html>
+> 转自：<http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html>
 
-作者： 阮一峰
+> 作者： 阮一峰
 
-日期： 2007年10月28日
+> 日期： 2007年10月28日
 
 今天中午，我突然想搞清楚Unicode和UTF-8之间的关系，于是就开始在网上查资料。
 结果，这个问题比我想象的复杂，从午饭后一直看到晚上9点，才算初步搞清楚。
