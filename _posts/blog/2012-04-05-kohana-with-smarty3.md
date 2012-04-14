@@ -67,11 +67,29 @@ tags:       php kohana
 
 ## 自定义Smarty配置
 
-smarty配置文件<code>\kohana-3.2\modules\Kohana_Smarty3\config\smarty.php</code>
-
-修改smarty定界符：
-
+* 修改smarty定界符：
+        #\kohana-3.2\modules\Kohana_Smarty3\config\smarty.php
         'left_delimiter'  => '<%'
         'right_delimiter' => '%>'
+
+* 修改smarty模版存放路径
+
+    #\kohana-3.2\modules\Kohana_Smarty3\classes\smarty\view.php
+    #if ( ($path = Kohana::find_file('views', $file, ''))===FALSE ) {
+    if ( ($path = Kohana::find_file('your_path', $file, ''))===FALSE ) {
+
+    #\kohana-3.2\modules\Kohana_Smarty3\config\smarty.php
+    'template_dir'    =>  array(
+      //APPPATH.'views',
+      YOUR_PATH,
+    ),
+        
+* 修改smarty插件路径
+    
+    #\kohana-3.2\modules\Kohana_Smarty3\config\smarty.php
+    'plugins_dir'     =>  array(
+      //APPPATH.'smarty_plugins',
+      YOUR_PATH,
+    ),
 
 [1]:    https://github.com/MrAnchovy/Kohana_Smarty3

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> template </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link href="../../assets/css/reset-min.css" rel="stylesheet">
+    <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <script src="../../assets/js/jquery-1.7.2.min.js"></script>
+    <script src="../../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="easing.js"></script>
+    <style>
+    .clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+    .clearfix { display: inline-table; }
+    * html .clearfix { height: 1%; }
+    .clearfix { display: block; }
+    dl{ padding:10px;}
+    dl dt{background:#fec;padding:5px;font-weight:bold;}
+    dl dd{margin:5px;}
+    .track{position: relative;display:inline-block;height:20px;width:520px;background:#eee;border-right:5px solid #333;}
+    .btn{line-height:22px;height:22px;width:120px;margin-right:20px;}
+    .ceil{position: absolute;background:#51a351;display:inlie-block;width:20px;height:20px;}
+    pre{border: 1px solid #CCC;}
+    </style>
+  </head>
+
+  <body>
+    <div id="doc">
+        <input type="button" class="btn" value="RUN ALL" onclick="runAll(t,b,c,d)"/>
+        <input type="button" class="btn" value="CODE" onclick="$('#ceil-list pre').toggle();"/>
+        <dl id="ceil-list">
+        </dl>
+    </div>
+    <script>
+    var tpl = []
+    ,t=0
+    ,b=0
+    ,c=500
+    ,d=50
+    ,_funType = ['easeIn','easeOut','easeInOut']
+    ,_funArr = [];
+    
+    for(var i=0,len=_funType.length;i<len;i++){
+        tpl.push('<dt>'+_funType[i]+'</dt>');
+            for(var easing in Easing){
+            var fun = Easing[easing][_funType[i]]
+            code = fun
+            ,el = easing+'_'+_funType[i];
+            tpl.push('<dd><input type="button" class="btn" value="RUN :'+ easing +'" onclick="run(\''+el+'\',Easing.'+easing+'.'+_funType[i]+',0,0,500,50)"/><div class="track"><span id="'+el+'" class="ceil"></span></div><pre style="display:none;">'+code+'</pre></dd>');
+            _funArr.push([el,fun]);
+        }
+    }
+    $('#ceil-list').html(tpl.join(''));
+    function run(el,fun,t,b,c,d) {
+        var val = fun(t,b,c,d);
+        $('#'+el).css('left',val);
+        if(t++<d){
+            setTimeout((function(el,fun,t,b,c,d){
+                return function(){
+                    run(el,fun,t,b,c,d);
+                }
+            }(el,fun,t,b,c,d)),20);
+        }
+    }
+    function runAll (t,b,c,d) {
+        for(var i=0,len=_funArr.length;i<len;i++){
+            run(_funArr[i][0],_funArr[i][1],t,b,c,d)
+        }
+    }
+
+    ;(function(){
+        var pre=document.getElementsByTagName("pre");
+        for(var i=0,len=pre.length;i<len;i++){
+            pre[i].className="prettyprint linenums";
+        }
+        prettyPrint();
+
+    })();
+    </script>
+  </body>
+</html>
