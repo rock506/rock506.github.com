@@ -1,23 +1,8 @@
 ---
 layout: default
 ---
-<!--
-page data:
-{
-    layout
-    title
-    category
-    url
-    date
-    id
-    categories
-    next
-    previous
-    tags
-    content
-}
--->
-{% for post in site.posts %}
+
+{% for post in site.posts limit:5 %}
     <div style="padding:0 0 20px 0;">
         <div class="page-header">
             <div style="border-left: 5px solid #999;padding: 10px;background: #F6F6F6;">

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<swf name="SWF01" url="01.swf" role="0" />
+	<swf name="SWF02" url="02.swf" role="0"/>
+	<swf name="SWF03" url="03.swf" role="0"/>
+	<swf name="SWF04" url="Upload.swf" role="1"/>
+</root>

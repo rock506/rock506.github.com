@@ -1,0 +1,331 @@
+.D {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999
+}
+.D .bg {
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=35);
+    -moz-opacity: 0.35;
+    opacity: 0.35;
+    -height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px')
+}
+.D iframe.cover_select {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+    z-index: -1;
+    display: none;
+    -display: 
+}
+.D .DLoad {
+    position: absolute;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    z-index: 5;
+    background-color: #fff
+}
+.D .loading {
+    display: inline-block;
+    padding-left: 18px;
+    background-position: 0 50%
+}
+.D .CR {
+    position: absolute
+}
+.D .DWrap {
+    position: relative;
+    padding: 15px 15px 2px;
+    *margin: -1px 0;
+    *zoom: 1;
+    background-color: #fff;
+    border: 1px solid #8E8E8E
+}
+.D .DWrap: : after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    left: -4px;
+    top: -4px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    border: 3px solid #9C9C9C;
+    border-color: rgba(51,51,51,0.1);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px
+}
+.D .DTitle {
+    overflow: hidden;
+    margin: -15px -15px 0;
+    padding: 15px 0 0 15px;
+    *zoom: 1;
+    cursor: move
+}
+.D .SA {
+    display: none
+}
+.D .top {
+    padding-top: 0;
+    color: #333
+}
+.D .bot {
+    height: 37px;
+    margin: 5px 0;
+    margin: 5px 0 8px\0
+}
+.D label {
+    position: absolute;
+    padding-left: 5px;
+    color: #999;
+    font-family: Simsun;
+    line-height: 23px;
+    _line-height: 25px
+}
+.D .close,.D .DClose {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    float: none
+}
+.D .DCont .close {
+    display: none
+}
+.D .wbpmcompose {
+    padding-top: 0!important
+}
+.D .countTxt {
+    float: right;
+    margin-left: 14px;
+    color: #999;
+    line-height: 33px;
+    overflow: visible;
+    _overflow: hidden
+}
+.D .countTxt em {
+    font-size: 22px
+}
+.D .inputArea {
+    width: 432px;
+    height: 60px;
+    border-color: #ADB6C5
+}
+.D .inputTxt {
+    width: 152px;
+    border-color: #ADB6C5
+}
+.D .inputBtn {
+    float: right;
+    margin-left: 15px;
+    width: 60px;
+    height: 19px;
+    margin-top: 6px;
+    text-indent: -9999em;
+    background-position: 0 -232px;
+    border: 0;
+    cursor: pointer
+}
+.D .disabled {
+    background-position: -62px -232px
+}
+.D .talkWrap,.D .zfWrap {
+    width: 444px;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background: none
+}
+.D .zfWrap .cont,.D .talkWrap .cont {
+    border-color: #ADB6C5
+}
+.D .zfWrap .inputTxt,.D .talkWrap .inputTxt {
+    width: 98%;
+    border: 0
+}
+.D .talkWrap .inputTxt {
+    height: 37px;
+    height: 37px\9;
+    overflow-y: auto;
+    line-height: 17px
+}
+.D .zfWrap .inputBtn {
+    background-position: 0 -212px
+}
+.D .zfWrap .disabled {
+    background-position: -62px -212px
+}
+.D .txtShadow {
+    width: 435px;
+    height: 60px;
+    padding: 3px 5px;
+    overflow-y: auto;
+    line-height: 1.231
+}
+.D .sendCnt {
+    margin: 0;
+    border-width: 0;
+    line-height: 1.75;
+    zoom: 0;
+    word-break : normal;
+    word-wrap: normal
+}
+.D .tabStyle1 ul {
+    float: left;
+    display: inline-block
+}
+.D .tabStyle1 {
+    position: absolute;
+    width: auto;
+    top: 7px;
+    margin: 0
+}
+.D .tabStyle1 li.select {
+    position: relative;
+    padding: 1px 0 0;
+    border-color: #C8DDE9;
+    border-top-width: 1px
+}
+.D .tabStyle1 li.select a {
+    color: #333;
+    cursor: default;
+    text-decoration: none
+}
+.pop_usergroup_pn {
+    margin-bottom: 10px;
+    clear: both;
+    border: 1px solid #F0F0F0 }
+.pop_usergroup_pn .hd {
+    height: 25px;
+    padding: 0 10px;
+    background: #F0F0F0;
+    line-height: 23px }
+.pop_usergroup_pn .hd h3 {
+    float: left;
+    font-size: 12px }
+.pop_usergroup_pn .hd .change_link, .pop_usergroup_pn .hd .follow_link, .pop_usergroup_pn .hd .loading {
+    float: right }
+.pop_usergroup_pn .hd .change_link {
+    margin-right: 15px
+}
+.pop_usergroup_pn .hd .loading {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 4px }
+.pop_usergroup_pn .bd {
+    padding: 5px 0 5px 10px }
+.pop_usergroup_pn .bd .loading {
+    min-height: 50px;
+    _height: 50px;
+    width: 95%;
+    background-position: 50% 50% }
+.pop_usergroup_pn .tjRelaList {
+    margin: 0 }
+.pop_usergroup_pn .tjRelaList li {
+    margin: 0;
+    padding: 0;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    height: 60px;
+    _display: inline }
+.pop_usergroup_pn .tjRelaList .knownInfo .reason {
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden }
+.pop_cnxh_cont {
+    padding: 15px 0 15px 0 }
+.pop_cnxh_cont_ft {
+    padding-top: 5px;
+    position: relative;
+    text-align: center }
+.pop_cnxh_cont_ft .go_more {
+    position: absolute;
+    right: 0;
+    _right: 15px }
+.D .rich_news {
+    padding-top: 15px
+}
+.D .pop_cmd_wrap {
+    padding: 20px 5px 0 5px;
+    width: 510px
+}
+.D .pop_cmd_wrap .cont {
+    padding: 1px 5px;
+    background: url(../img/v1/b3_120314.png) repeat-x 0 -380px #ffffff
+}
+.D .pop_cmd_wrap .inputTxt {
+    background: none;
+    padding: 4px 0
+}
+.D .pop_cmd_wrap .cont {
+    margin-bottom: 0;
+    border-radius: 6px 6px 6px 6px
+}
+.D .pop_cmd_wrap .cont .inputTxt {
+    }
+.D .pop_cmd_wrap .cont_blur .inputTxt {
+    color: #999
+}
+.D .pop_cmd_wrap .cont_focus {
+    -moz-box-shadow: 0 0 5px #bbdaee;
+    -webkit-box-shadow: 0 0 5px #bbdaee;
+    border: 1px solid #7BD6F6
+}
+.D .pop_cmd_wrap .cont_null {
+    background: #FEFBE8
+}
+.D .pop_cmd_wrap .tip_text {
+    padding: 1px 5px 3px 5px;
+    background: #F3F3F3;
+    color: #666
+}
+.D .pop_cmd_wrap .tip_text_error {
+    background: #FFFCDC
+}
+.D .pop_cmd_wrap .txtShadow {
+    display: none
+}
+.D .pop_cmd_wrap .bot .insertFun {
+    margin-top: 5px
+}
+.D .pop_cmd_wrap .bot .btn3 {
+    float: right;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-weight: normal;
+    cursor: pointer
+}
+.pop_typemes_form {
+    margin-top: 4px
+}
+.pop_typemes_form .row {
+    padding-bottom: 6px
+}
+.pop_typemes_form .lc {
+    float: left;
+    width: 63px;
+    padding: 6px 0 0 0;
+    color: #999
+}
+.pop_typemes_form .rc {
+    float: left
+}
+.pop_chs_box1 {
+    padding: 10px 0 15px 0
+}
+.pop_chs_box1 .text_gray {
+    color: #999
+}

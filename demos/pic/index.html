@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> template </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link href="http://yui.yahooapis.com/3.5.0/build/cssreset/cssreset-min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="easing.js"></script>
+    <style>
+    .clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+    .clearfix { display: inline-table; }
+    * html .clearfix { height: 1%; }
+    .clearfix { display: block; }
+
+    .pic{position: absolute;border:5px solid;-webkit-transition:all 2s ease-in;-webkit-transform:rotate(0deg);}
+    </style>
+  </head>
+
+  <body>
+    <div id="doc" style="height:800px;">
+
+    </div>
+    <script>
+    var Pic = function (data,container) {
+        this.container = container;
+        this.data = data;
+        this.init();
+    }
+    Pic.prototype = {
+        init:function (argument) {
+            // body...
+            var tpl = this.getTpl(this.data,this.container);
+            this.container.html(tpl);
+        }
+        ,go:function (argument) {
+            // body...
+            $('.pic').each(function(index, element){
+                var angle = 'rotate('+ $(this).attr('data-angle') +'deg)'
+                $(this).css('-webkit-transform',angle);
+                run(this,Easing.Cubic.easeOut,0,0,$(this).attr('data-left'),20,'left');
+                run(this,Easing.Cubic.easeOut,0,0,$(this).attr('data-top'),20,'top');
+            });
+        }
+        ,getTpl:function (data,container) {
+            var w = container.width()
+            ,h = container.height()
+            ,tpl = [];
+            for(var i=0,len=data.length;i<len;i++){
+                var tmpL = Math.random()*w
+                ,tmpT = Math.random()*h
+                ,tmpA = Math.random()*180;
+                tpl.push(this.getItemTpl(data[i],tmpL,tmpT,tmpA));
+            } 
+            return tpl.join('');
+        }
+        ,getItemTpl: function (src,left,top,angle) {
+            return '<img class="pic" src="'+src+'" data-left="'+left+'" data-top="'+top+'" data-angle="'+angle+'"/>';
+        }
+    };
+    function run(el,fun,t,b,c,d,x) {
+        var val = fun(t,b,c,d);
+        $(el).css(x,val);
+        if(t++<d){
+            setTimeout((function(el,fun,t,b,c,d,x){
+                return function(){
+                    run(el,fun,t,b,c,d,x);
+                }
+            }(el,fun,t,b,c,d,x)),20);
+        }
+    }
+    var imgArr = ['http://wenku.baidu.com/img/88184adfa58da0116c174938','http://wenku.baidu.com/img/da450b365a8102d276a22f2c','http://wenku.baidu.com/img/826e32baf121dd36a32d8255'];
+    var pic = new Pic(imgArr,$('#doc'));
+    pic.go();
+    </script>
+  </body>
+</html>
